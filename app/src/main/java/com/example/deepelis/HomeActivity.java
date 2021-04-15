@@ -22,13 +22,16 @@ public class HomeActivity extends AppCompatActivity {
         sliderpager = findViewById(R.id.slider_page);
 
 
+
+
+
         lstSlides = new ArrayList<>();
         lstSlides.add(new Slide(R.drawable.slide1, "SPACE JUM 2"));
         lstSlides.add(new Slide(R.drawable.slide2, "RAYA  AND THE LAST DRAGON"));
         lstSlides.add(new Slide(R.drawable.slide3, "TOM Y JERRY"));
 
         SliderPagerAdapter adapter = new SliderPagerAdapter(this,lstSlides);
-
         sliderpager.setAdapter((adapter));
+
     }
 }

@@ -11,32 +11,35 @@
         android:layout_width="409dp"
         android:layout_height="276dp"
         android:scaleType="centerCrop"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        android:src="@drawable/ic_launcher_background" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:src="@drawable/gradient_bg"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/slide_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/gradient_bg" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/slide_title"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="TextView"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/slide_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,6 +55,7 @@
         android:clickable="true"
         android:foregroundTint="#000000"
         android:src="@drawable/ic_baseline_play_arrow_24"
+        android:visibility="visible"
         app:backgroundTint="#f1b814"
         app:layout_constraintBottom_toBottomOf="@+id/slide_title"
         app:layout_constraintEnd_toEndOf="parent"
