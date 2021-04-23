@@ -16,19 +16,16 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     Context context;
     List<Movie> mData;
 
-    public MovieAdapter(Context context,List<Movie> mdata){
+    public MovieAdapter(Context context,List<Movie> mData){
         this.context =context;
-        this.mData = mdata;
+        this.mData = mData;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_movie, viewGroup,false);
-
-
-
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.item_movie, viewGroup, false);
+        return new MyViewHolder(view);
     }
 
     @Override
