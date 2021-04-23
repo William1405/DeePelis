@@ -2,9 +2,15 @@ package com.example.deepelis;
 
 import android.os.Bundle;
 
+import android.widget.TextView;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+
+
+
+import java.awt.font.TextAttribute;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +20,16 @@ public class HomeActivity extends AppCompatActivity {
     private List<Slide> lstSlides;
     private ViewPager sliderpager;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        sliderpager = findViewById(R.id.slider_page);
+          sliderpager = findViewById(R.id.slider_page);
+
+
 
 
 

@@ -8,7 +8,7 @@
     android:background="@color/colorPrimary">
 
 
-    <androidx.viewpager2.widget.ViewPager2
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/slider_page"
         android:layout_width="match_parent"
         android:layout_height="275dp"
