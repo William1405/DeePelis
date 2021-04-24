@@ -79,7 +79,7 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
         intent.putExtra("title",movie.getTitle());
         intent.putExtra("imgURL",movie.getThumbnail());
-       
+
 
         ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this,
                                                                                 movieImageView,"sharedName");
