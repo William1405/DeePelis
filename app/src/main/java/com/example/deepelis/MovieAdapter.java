@@ -15,10 +15,12 @@ import java.util.List;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder>{
     Context context;
     List<Movie> mData;
+    MovieItemClickListener movieItemClickListener;
 
-    public MovieAdapter(Context context,List<Movie> mData){
+    public MovieAdapter(Context context,List<Movie> mData, MovieItemClickListener listener){
         this.context =context;
         this.mData = mData;
+        movieItemClickListener = listener;
     }
 
     @NonNull
@@ -47,6 +49,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
            super(itemView);
            TvTitle = itemView.findViewById(R.id.item_movie_title);
            ImgMovie = itemView.findViewById(R.id.item_movie_img);
+
+           itemView.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                    movieItemClickListener.onMovieClick(mData.get(getAdapterPosition()),ImgMovie);
+               }
+           });
        }
    }
 }

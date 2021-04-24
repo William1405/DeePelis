@@ -1,7 +1,12 @@
 package com.example.deepelis;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,7 +22,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements MovieItemClickListener {
 
     private List<Slide> lstSlides;
     private ViewPager sliderpager;
@@ -46,11 +51,14 @@ public class HomeActivity extends AppCompatActivity {
         //Recyclerview de peliculas
 
         List<Movie> lstMovies= new ArrayList<>();
-        lstMovies.add(new Movie("King vs Godzilla", R.drawable.king) );
-        lstMovies.add(new Movie("Croods2", R.drawable.croods) );
+        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king) );
+        lstMovies.add(new Movie("Los Croods2", R.drawable.croods) );
+        lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga));
+        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king) );
+        lstMovies.add(new Movie("Los Croods2", R.drawable.croods) );
         lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga));
 
-        MovieAdapter movieAdapter = new MovieAdapter(this,lstMovies);
+        MovieAdapter movieAdapter = new MovieAdapter(this,lstMovies, this);
         MoviesRV.setAdapter(movieAdapter);
         MoviesRV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
 
@@ -60,6 +68,25 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    @Override
+    public void onMovieClick(Movie movie, ImageView movieImageView) {
+
+        Intent intent = new Intent(this,MovieDetailActivity.class);
+
+        intent.putExtra("title",movie.getTitle());
+        intent.putExtra("imgURL",movie.getThumbnail());
+       
+
+        ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this,
+                                                                                movieImageView,"sharedName");
+
+        startActivity(intent,options.toBundle());
+
+        Toast.makeText(this,"Pelicula : "+movie.getTitle(),Toast.LENGTH_LONG).show();
 
 
     }
