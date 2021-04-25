@@ -1,11 +1,9 @@
-package com.example.deepelis;
+package com.example.deepelis.ui;
 
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.deepelis.models.Movie;
+import com.example.deepelis.adapter.MovieAdapter;
+import com.example.deepelis.adapter.MovieItemClickListener;
+import com.example.deepelis.R;
+import com.example.deepelis.models.Slide;
+import com.example.deepelis.adapter.SliderPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -38,6 +41,8 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
         sliderpager = findViewById(R.id.slider_page);
         indicator=findViewById(R.id.indicator);
         MoviesRV =findViewById(R.id.Rv_movies);
+
+
         lstSlides = new ArrayList<>();
         lstSlides.add(new Slide(R.drawable.slide1, "SPACE JUM 2"));
         lstSlides.add(new Slide(R.drawable.slide2, "RAYA  AND THE LAST DRAGON"));
@@ -46,17 +51,17 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
         sliderpager.setAdapter((adapter));
         //setup time
         Timer timer =new Timer();
-        timer.scheduleAtFixedRate(new HomeActivity.SliderTimer(), 4000, 6000);
+        timer.scheduleAtFixedRate(new HomeActivity.SliderTimer(), 4000, 5000);
         indicator.setupWithViewPager(sliderpager,true);
         //Recyclerview de peliculas
 
         List<Movie> lstMovies= new ArrayList<>();
-        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king) );
-        lstMovies.add(new Movie("Los Croods2", R.drawable.croods) );
-        lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga));
-        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king) );
-        lstMovies.add(new Movie("Los Croods2", R.drawable.croods) );
-        lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga));
+        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king,R.drawable.king) );
+        lstMovies.add(new Movie("Los Croods2", R.drawable.croods,R.drawable.croods) );
+        lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga,R.drawable.liga));
+        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king,R.drawable.king) );
+        lstMovies.add(new Movie("Los Croods2", R.drawable.croods,R.drawable.croods) );
+        lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga,R.drawable.liga));
 
         MovieAdapter movieAdapter = new MovieAdapter(this,lstMovies, this);
         MoviesRV.setAdapter(movieAdapter);
@@ -79,6 +84,8 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
         intent.putExtra("title",movie.getTitle());
         intent.putExtra("imgURL",movie.getThumbnail());
+        intent.putExtra("imgCover",movie.getCoverPhoto());
+
 
 
         ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this,
@@ -86,7 +93,7 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
         startActivity(intent,options.toBundle());
 
-        Toast.makeText(this,"Pelicula : "+movie.getTitle(),Toast.LENGTH_LONG).show();
+       //Toast.makeText(this,"Pelicula : "+movie.getTitle(),Toast.LENGTH_LONG).show();
 
 
     }

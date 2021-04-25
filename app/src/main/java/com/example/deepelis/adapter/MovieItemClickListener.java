@@ -1,7 +1,8 @@
-package com.example.deepelis;
+package com.example.deepelis.adapter;
 
-import android.media.Image;
 import android.widget.ImageView;
+
+import com.example.deepelis.models.Movie;
 
 public interface MovieItemClickListener {
 

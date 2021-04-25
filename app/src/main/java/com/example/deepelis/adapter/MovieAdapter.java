@@ -1,4 +1,4 @@
-package com.example.deepelis;
+package com.example.deepelis.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.deepelis.R;
+import com.example.deepelis.models.Movie;
 
 import java.util.List;
 

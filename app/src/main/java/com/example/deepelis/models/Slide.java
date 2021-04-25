@@ -1,4 +1,4 @@
-package com.example.deepelis;
+package com.example.deepelis.models;
 
 public class Slide {
     private int Image ;

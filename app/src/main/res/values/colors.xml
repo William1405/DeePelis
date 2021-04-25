@@ -3,6 +3,7 @@
     <color name="colorPrimary">#151c25</color>
     <color name="colorPrimaryDark">#151c25</color>
     <color name="colorAccent">#f1b814</color>
+    <color name="text_ligth_blue">#1871B8</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
