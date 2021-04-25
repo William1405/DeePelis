@@ -2,6 +2,7 @@ package com.example.deepelis.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
 
+
         //Agregar Animaciones
 
         Animation animacion1 = AnimationUtils.loadAnimation(this, R.anim.desplazamiento_arriba);
@@ -31,6 +33,8 @@ public class SplashActivity extends AppCompatActivity {
 
         textViewsplash.setAnimation(animacion2);
         LogoDee.setAnimation(animacion1);
+
+
 
         new Handler().postDelayed(new Runnable() {
 
