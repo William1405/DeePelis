@@ -59,23 +59,25 @@
             app:srcCompat="@drawable/king" />
 
         <TextView
-            android:textColor="@color/white"
             android:id="@+id/detail_movie_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="TextView"
+            android:textColor="@color/white"
+            android:textSize="19sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/detail_movie_cover"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:lineSpacingExtra="8dp"
-            android:textColor="@color/text_ligth_blue"
+            android:textColor="@color/white"
             android:id="@+id/detail_movie_desc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

@@ -19,6 +19,7 @@ import com.example.deepelis.adapter.MovieItemClickListener;
 import com.example.deepelis.R;
 import com.example.deepelis.models.Slide;
 import com.example.deepelis.adapter.SliderPagerAdapter;
+import com.example.deepelis.utils.DataSource;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -32,7 +33,8 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
     private List<Slide> lstSlides;
     private ViewPager sliderpager;
     private TabLayout indicator;
-    private RecyclerView MoviesRV;
+    private RecyclerView MoviesRV,moviesRvWeek;
+
 
 
 
@@ -40,11 +42,34 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        sliderpager = findViewById(R.id.slider_page);
-        indicator=findViewById(R.id.indicator);
-        MoviesRV =findViewById(R.id.Rv_movies);
+        iniViews();
 
 
+        iniSlider();
+        iniPopularMovie();
+        iniWeekMovies();
+
+
+    }
+
+    private void iniWeekMovies() {
+          MovieAdapter weekMovieAdapter = new  MovieAdapter( this, DataSource.getWeekMovies(), this);
+          moviesRvWeek.setAdapter(weekMovieAdapter);
+          moviesRvWeek.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
+
+    }
+
+    private void iniPopularMovie() {
+        //Recyclerview de peliculas
+
+
+
+        MovieAdapter movieAdapter = new MovieAdapter(this, DataSource.getPopularMovie(), this);
+        MoviesRV.setAdapter(movieAdapter);
+        MoviesRV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
+    }
+
+    private void iniSlider() {
         lstSlides = new ArrayList<>();
         lstSlides.add(new Slide(R.drawable.slide1, "SPACE JUM 2"));
         lstSlides.add(new Slide(R.drawable.slide2, "RAYA  AND THE LAST DRAGON"));
@@ -53,30 +78,15 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
         sliderpager.setAdapter((adapter));
         //setup time
         Timer timer =new Timer();
-        timer.scheduleAtFixedRate(new HomeActivity.SliderTimer(), 4000, 5000);
+        timer.scheduleAtFixedRate(new SliderTimer(), 4000, 5000);
         indicator.setupWithViewPager(sliderpager,true);
-        //Recyclerview de peliculas
+    }
 
-        List<Movie> lstMovies= new ArrayList<>();
-        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king,R.drawable.king) );
-        lstMovies.add(new Movie("Los Croods2", R.drawable.croods,R.drawable.croods) );
-        lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga,R.drawable.liga));
-        lstMovies.add(new Movie("Kong vs Godzilla", R.drawable.king,R.drawable.king) );
-        lstMovies.add(new Movie("Los Croods2", R.drawable.croods,R.drawable.croods) );
-        lstMovies.add(new Movie("Liga de la justicia", R.drawable.liga,R.drawable.liga));
-
-        MovieAdapter movieAdapter = new MovieAdapter(this,lstMovies, this);
-        MoviesRV.setAdapter(movieAdapter);
-        MoviesRV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
-
-
-
-
-
-
-
-
-
+    private void iniViews() {
+        sliderpager = findViewById(R.id.slider_page);
+        indicator=findViewById(R.id.indicator);
+        MoviesRV =findViewById(R.id.Rv_movies);
+        moviesRvWeek=findViewById(R.id.rv_movies_week);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
