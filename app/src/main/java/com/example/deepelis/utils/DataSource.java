@@ -22,12 +22,12 @@ public class DataSource {
 
     public static List<Movie> getWeekMovies(){
         List<Movie> lstMovies= new ArrayList<>();
-        lstMovies.add(new Movie("EL IRLANDÉS", R.drawable.irlandes,R.drawable.irlandes) );
+        lstMovies.add(new Movie("EL irland´ss", R.drawable.irlandes,R.drawable.irlandes) );
         lstMovies.add(new Movie("300", R.drawable.p300,R.drawable.p300) );
-        lstMovies.add(new Movie("SOUL", R.drawable.soul,R.drawable.soul));
-        lstMovies.add(new Movie("EL IRLANDÉS", R.drawable.irlandes,R.drawable.irlandes) );
+        lstMovies.add(new Movie("Soul", R.drawable.soul,R.drawable.soul));
+        lstMovies.add(new Movie("EL irlandés", R.drawable.irlandes,R.drawable.irlandes) );
         lstMovies.add(new Movie("300", R.drawable.p300,R.drawable.p300) );
-        lstMovies.add(new Movie("SOUL", R.drawable.soul,R.drawable.soul));
+        lstMovies.add(new Movie("Soul", R.drawable.soul,R.drawable.soul));
 
         return lstMovies;
     }
