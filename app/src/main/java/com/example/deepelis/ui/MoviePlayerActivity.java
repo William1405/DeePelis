@@ -7,21 +7,22 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
-import com.google.android.exoplayer2.source.MediaSource;
-import com.google.android.exoplayer2.util.Util;
+
 import com.example.deepelis.R;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.source.ExtractorMediaSource;
+import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.util.Util;
 
 public class MoviePlayerActivity extends AppCompatActivity {
 
     private PlayerView playerView;
     private SimpleExoPlayer simpleExoPlayer;
-    public static final String VIDEO_TEST_URL="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+    public static final String VIDEO_TEST_URL="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,9 @@ public class MoviePlayerActivity extends AppCompatActivity {
 
         setFullScreen();
         setContentView(R.layout.activity_movie_player);
+        
+        
+
         hideActionbar();
 
         iniExoPlayer();
@@ -51,8 +55,8 @@ public class MoviePlayerActivity extends AppCompatActivity {
         playerView = findViewById(R.id.movie_exo_player);
         simpleExoPlayer= ExoPlayerFactory.newSimpleInstance(this);
         playerView.setPlayer(simpleExoPlayer);
-        DataSource.Factory datasourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this,"appname"));
-        MediaSource videoSource = new ExtractorMediaSource.Factory(datasourceFactory).createMediaSource(Uri.parse(VIDEO_TEST_URL));
+        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this,"app_name"));
+        MediaSource videoSource = new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(Uri.parse(VIDEO_TEST_URL));
         simpleExoPlayer.prepare(videoSource);
         simpleExoPlayer.setPlayWhenReady(true);
 

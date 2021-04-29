@@ -111,6 +111,10 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
     }
 
+
+
+
+
     class SliderTimer extends TimerTask {
         @Override
 

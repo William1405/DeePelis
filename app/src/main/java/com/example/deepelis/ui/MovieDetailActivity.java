@@ -2,7 +2,9 @@ package com.example.deepelis.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,8 +26,18 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         iniViews();
 
+       FloatingActionButton play_fab = (FloatingActionButton) findViewById(R.id.play_fab);
+        play_fab.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent MiIntent = new Intent(MovieDetailActivity.this,MoviePlayerActivity.class);
+                startActivity(MiIntent);
+            }
+        });
 
     }
+
 
     void iniViews() {
 
