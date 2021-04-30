@@ -14,7 +14,7 @@ Splash
 
 
 
-
-
 Menu principal.
+
+
 ![image](https://user-images.githubusercontent.com/61747355/116717154-368bf180-a99e-11eb-87e8-8d5f8d040cc3.png)
