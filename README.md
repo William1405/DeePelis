@@ -7,6 +7,9 @@ Contiene un splash con animación.
 
 Hecha por William Andrade -Felipe Arteaga
 
+![image](https://user-images.githubusercontent.com/60258356/116735150-c12b1b80-a9b3-11eb-97ab-faba26c3f24d.png)
+
+
 ![image](https://user-images.githubusercontent.com/60258356/116721645-2c202680-a9a3-11eb-8d5c-39f55af2d379.png)
 
 
