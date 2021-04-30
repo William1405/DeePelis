@@ -8,6 +8,8 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    
+
     defaultConfig {
         applicationId "com.example.deepelis"
         minSdkVersion 16
@@ -42,4 +44,10 @@ dependencies {
     //glide library
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+
+
+  //Exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
+
+
 }
