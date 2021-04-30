@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
     private TabLayout indicator;
     private RecyclerView MoviesRV,moviesRvWeek;
 
-      
+
 
 
     @Override
@@ -110,10 +110,6 @@ public class HomeActivity extends AppCompatActivity implements MovieItemClickLis
 
 
     }
-
-
-
-
 
     class SliderTimer extends TimerTask {
         @Override
