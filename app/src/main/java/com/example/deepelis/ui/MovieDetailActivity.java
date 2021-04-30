@@ -54,7 +54,7 @@ public class MovieDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent MiIntent = new Intent(MovieDetailActivity.this,VideoPlayerActivity.class);
-                MiIntent.putExtra("url",mFileUrl);
+                //MiIntent.putExtra("url",mFileUrl);
                 startActivity(MiIntent);
 
             }

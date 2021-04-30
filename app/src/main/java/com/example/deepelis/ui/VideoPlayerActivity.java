@@ -21,7 +21,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     private PlayerView videoPlayer;
     private SimpleExoPlayer simpleExoPlayer;
     private static final String FILE_URL="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
