@@ -20,7 +20,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
 
     private PlayerView videoPlayer;
     private SimpleExoPlayer simpleExoPlayer;
-    private static final String FILE_URL="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+    private static final String FILE_URL="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4";
 
 
     @Override
